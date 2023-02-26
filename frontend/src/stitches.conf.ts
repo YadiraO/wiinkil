@@ -5,14 +5,11 @@ import { COLORS } from 'styles/colors'
 
 export const { styled, css, theme, config, getCssText, globalCss, keyframes } = createStitches({
     theme: {
-        colors: {
-            ...COLORS,
-        },
         shadows: {
-            level1: `0px 2px 16px 0px ${COLORS.shadow_color}`,
-            level2: `0px 5px 24px 3px ${COLORS.shadow_color}`,
-            level3: `0px 10px 32px 4px ${COLORS.shadow_color}`,
-            level4: `0px 10px 32px 4px ${COLORS.shadow_color}`,
+            level1: `0px 2px 16px 0px ${COLORS.DARK[100]}`,
+            level2: `0px 5px 24px 3px ${COLORS.DARK[100]}`,
+            level3: `0px 10px 32px 4px ${COLORS.DARK[100]}`,
+            level4: `0px 10px 32px 4px ${COLORS.DARK[100]}`,
         },
         space: {
             1: '4px',
@@ -129,6 +126,5 @@ export const globalStyles = globalCss({
 
 export type { VariantProps } from '@stitches/react'
 export type CSS = Stitches.CSS<typeof config>
-export type ColorTokens = keyof typeof theme.colors
 export type SizeTokens = keyof typeof theme.sizes
 export type SpaceTokens = keyof typeof theme.space
