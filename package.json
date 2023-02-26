@@ -1,0 +1,16 @@
+{
+  "name": "wiinkil",
+  "version": "1.0.0",
+  "description": "internal control pannel",
+  "main": "index.js",
+  "repository": "git@github.com:Mecuate/wiinkil.git",
+  "author": "JChicomeSan <57263663+ChicomeMX7@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "8.0.3"
+  }
+}
