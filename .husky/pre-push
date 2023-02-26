@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+branch_name="$(git rev-parse --abbrev-ref HEAD)"
+n=$'\n'
+
+# FRONT END PROTOCOLS
+
+cd frontend
+yarn types 
+yarn format
+yarn test
+cd ..
+
+# TERMINATION
+printf '\e[1;35m%s\e[0m%b' "$branch_name" " is updated. $n$n"
