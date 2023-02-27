@@ -15,5 +15,5 @@ export const Logo = styled('img', {
     paddingTop: '$1',
     width: '38px',
     height: 'auto',
-    cursor: 'pointer'
+    cursor: 'pointer',
 })

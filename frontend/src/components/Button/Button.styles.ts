@@ -23,10 +23,10 @@ export const ButtonContainer = styled('button', {
                 size: '38px',
                 borderRadius: '$1',
 
-                '&:hover':{
+                '&:hover': {
                     backgroundColor: `${colors.PRIMARY}14`,
-                    border: `1px solid ${colors.SECONDARY}15`
-                }
+                    border: `1px solid ${colors.SECONDARY}15`,
+                },
             },
             primary: {
                 backgroundColor: colors.PRIMARY,

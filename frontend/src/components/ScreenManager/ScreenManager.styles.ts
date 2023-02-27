@@ -3,7 +3,7 @@ import { colors } from 'styles/colors'
 
 export const ScreenManagerContainer = styled('div', {
     display: 'block',
-    
+
     padding: '$2',
     margin: 0,
     overflowX: 'auto',
@@ -12,7 +12,6 @@ export const ScreenManagerContainer = styled('div', {
     height: '100%',
 
     border: '1px solid red',
-   
 })
 
 export const ScrollableContainer = styled('div', {
