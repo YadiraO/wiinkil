@@ -18,9 +18,21 @@ export type FetchConfig = {
     data?: Data | any
     params?: GenericObject<any> | undefined | null
     responseType: ResponseType
-    [key: string | number | symbol]: string | boolean | number | GenericObject<any> | undefined | null
+    [key: string | number | symbol]:
+        | string
+        | boolean
+        | number
+        | GenericObject<any>
+        | undefined
+        | null
 }
 
 export type Network = {
-    createFetch: (url: URL, method: Method, data: Data, headers: Headers, response: ResponseType) => Promise<Response>
+    createFetch: (
+        url: URL,
+        method: Method,
+        data: Data,
+        headers: Headers,
+        response: ResponseType
+    ) => Promise<Response>
 }

@@ -1,14 +1,16 @@
-export const COLORS = {
-    BACK: '#272932',
+export const colors = {
+    BACK: '#1a1b20',
     PRIMARY: '#5F44D8',
     SECONDARY: '#149F9A',
-    TERTIARY: '#7D9193',
-    TEXT: '#B6C2D9',
+    TERTIARY: '#464852',
+    TEXT: '#b1b5bb',
+    LIGHT: '#f0f2f5',
+    TRANSPARENT: 'transparent',
 
     DARK: {
-        [100]: '#252525',
-        [200]: '#70758F',
-        [300]: '#CFD1DA',
+        [100]: '#050607',
+        [200]: '#1F2023',
+        [300]: '#29292B',
     },
     SUCCESS: {
         [100]: '#7BEAA0',

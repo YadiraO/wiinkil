@@ -1,10 +1,10 @@
 import { styled } from 'stitches.conf'
-// import { Link } from 'react-router-dom'
+import { colors } from 'styles/colors'
 
 export const SidebarContainer = styled('div', {})
 
 export const Nav = styled('div', {
-    background: 'transparent',
+    background: colors.TRANSPARENT,
     height: '72px',
     width: '72px',
     display: 'flex',

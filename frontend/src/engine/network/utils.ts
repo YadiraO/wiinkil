@@ -23,7 +23,16 @@ const decode = (params: ParamsObject) => {
     }
 
     let result = '?'
-    const KeyNames = ['object', 'function', 'string', 'number', 'boolean', 'bigint', 'symbol', 'undefined']
+    const KeyNames = [
+        'object',
+        'function',
+        'string',
+        'number',
+        'boolean',
+        'bigint',
+        'symbol',
+        'undefined',
+    ]
 
     for (const key in params) {
         if (Object.hasOwnProperty.call(params, key)) {

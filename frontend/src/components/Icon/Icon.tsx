@@ -1,4 +1,5 @@
 import { ComponentProps } from 'react'
+import { colors } from 'styles/colors'
 import { IconRoot } from './Icon.styles'
 import { IconNames } from './IconNames'
 
@@ -9,18 +10,18 @@ export type IconProps = IconOwnProps & {
     label?: string
     color?: string
     css?: string
-    size?: string
+    // size?: string
 }
 
-export const Icon = ({ icon, label, color, css, size }: IconProps) => {
+export const Icon = ({ icon, label, color, css, size = 'small' }: IconProps) => {
     return (
         <IconRoot
             css={{
-                fill: color ? `$${color}` : '$m_main',
+                fill: color ? color : colors.TEXT,
                 ...(css as any),
             }}
             role={label ? 'img' : 'presentation'}
-            size={size ? size : 'small'}
+            size={size}
             viewBox={'0 0 48 48'}
         >
             {label && <title>{label}</title>}

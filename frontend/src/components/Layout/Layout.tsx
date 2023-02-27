@@ -1,17 +1,16 @@
-import { ComponentProps } from 'react'
-import { LayoutContainer, MainRoot } from './Layout.styles'
-import { MenuPannel } from 'components/MenuPannel'
+import { LayoutContainer, LeftPannel, MainRoot } from './Layout.styles'
+import { LeftBarControler, UpperBarControler } from 'components/Controllers'
+import { ScreenManager } from 'components/ScreenManager'
 
-type LayoutOwnProps = ComponentProps<typeof LayoutContainer>
-export type LayoutProps = LayoutOwnProps & {
-    _name_?: string
-}
-
-export const Layout = ({}: LayoutProps) => {
+export const Layout = () => {
     return (
         <LayoutContainer>
+            <LeftPannel>
+                <LeftBarControler />
+            </LeftPannel>
             <MainRoot>
-                <MenuPannel />
+                <UpperBarControler />
+                <ScreenManager />
             </MainRoot>
         </LayoutContainer>
     )

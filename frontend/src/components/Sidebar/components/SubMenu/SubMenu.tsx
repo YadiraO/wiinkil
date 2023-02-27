@@ -33,7 +33,13 @@ export const SubMenu = ({ item }: SubMenuProps) => {
                         {item.icon}
                         <SidebarLabel>{item.title}</SidebarLabel>
                     </div>
-                    <div>{item.subNav && subnav ? item.iconOpened : item.subNav ? item.iconClosed : null}</div>
+                    <div>
+                        {item.subNav && subnav
+                            ? item.iconOpened
+                            : item.subNav
+                            ? item.iconClosed
+                            : null}
+                    </div>
                 </>
             </SidebarLink>
             {item.subNav &&

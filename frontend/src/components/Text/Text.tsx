@@ -1,84 +1,88 @@
 import { ComponentProps } from 'react'
-import { styled } from 'stitches.conf'
+import { TextContainer } from './Text.styles'
 
-export const Text = styled('span', {
-    color: '$text',
-    fontFamily: '$sans',
+export type TextProps = ComponentProps<typeof TextContainer>
 
-    variants: {
-        font: {
-            sans: {
-                fontFamily: '$sans',
-            },
-            serif: {
-                fontFamily: '$serif',
-            },
-        },
-        size: {
-            small: {
-                fontSize: '$small',
-            },
-            regular: {
-                fontSize: '$regular',
-            },
-            normal: {
-                fontSize: '$normal',
-            },
-            mid: {
-                fontSize: '$middle',
-            },
-            header: {
-                fontSize: '$head',
-            },
-            big: {
-                fontSize: '$big',
-            },
-            title: {
-                fontSize: '$title',
-            },
-            max: {
-                fontSize: '$bigger',
-            },
-        },
-        weight: {
-            thin: {
-                fontWeight: '100',
-            },
-            200: {
-                fontWeight: '200',
-            },
-            mid: {
-                fontWeight: '300',
-            },
-            regular: {
-                fontWeight: '400',
-            },
-            bold: {
-                fontWeight: '600',
-            },
-            fat: {
-                fontWeight: '800',
-            },
-        },
-        variant: {
-            default: {
-                color: '$text',
-            },
-            light: {
-                color: '$text_li',
-            },
-            green: {
-                color: '$c_verde',
-            },
-        },
-    },
+export const Text = ({
+    children,
+    color = 'default',
+    size = 'normal',
+    weight = 'regular',
+    font = 'sans',
+    ...others
+}: TextProps) => {
+    return (
+        // <TextContainer color={'danger'} size={'max'}>
+        <TextContainer color={color} size={size} weight={weight} font={font} {...others}>
+            {children}
+        </TextContainer>
+    )
+}
+const TextSmall = ({ children, ...others }: TextProps) => {
+    return (
+        <Text {...others} size={'small'}>
+            {children}
+        </Text>
+    )
+}
+const TextHeader = ({ children, ...others }: TextProps) => {
+    return (
+        <Text {...others} size={'header'} weight={'semi'}>
+            {children}
+        </Text>
+    )
+}
+const TextHeavy = ({ children, ...others }: TextProps) => {
+    return (
+        <Text {...others} weight={'bold'}>
+            {children}
+        </Text>
+    )
+}
+const TextBoom = ({ children, ...others }: TextProps) => {
+    return (
+        <Text {...others} size={'max'} weight={'fat'}>
+            {children}
+        </Text>
+    )
+}
 
-    defaultVariants: {
-        size: 'regular',
-        font: 'sans',
-    },
-})
+const TextBig = ({ children, ...others }: TextProps) => {
+    return (
+        <Text {...others} weight={'bold'} size={'big'}>
+            {children}
+        </Text>
+    )
+}
+const TextTitle = ({ children, ...others }: TextProps) => {
+    return (
+        <Text {...others} weight={'bold'} size={'title'}>
+            {children}
+        </Text>
+    )
+}
+const TextSubtitle = ({ children, ...others }: TextProps) => {
+    return (
+        <Text {...others} weight={'semi'} size={'subtitle'}>
+            {children}
+        </Text>
+    )
+}
+const TextRegular = ({ children, ...others }: TextProps) => {
+    return (
+        <Text {...others} weight={'regular'} size={'normal'}>
+            {children}
+        </Text>
+    )
+}
+
+Text.Boom = TextBoom
+Text.Header = TextHeader
+Text.Big = TextBig
+Text.Title = TextTitle
+Text.Subtitle = TextSubtitle
+Text.Heavy = TextHeavy
+Text.Regular = TextRegular
+Text.Small = TextSmall
 
 Text.displayName = 'Text'
-
-export type TextProps = ComponentProps<typeof Text>

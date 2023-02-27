@@ -3,7 +3,8 @@
 export const validTranslationKeys = {
     en: {
         'academy:frontPage.title': 'Bienvenido a la Academia mecuate astrophytum',
-        'academy:frontPage.description': 'this academy is made for all peoples from anywhrer in the universe.',
+        'academy:frontPage.description':
+            'this academy is made for all peoples from anywhrer in the universe.',
         'academy:workShopPage.groupName': 'Nombre de Grupo',
         'academy:workShopPage.groupType.solid': 'Grupo sólido',
         'academy:workShopPage.groupType.stable': 'Grupo fijo',
@@ -25,7 +26,8 @@ export const validTranslationKeys = {
     },
     es: {
         'academy:frontPage.title': 'Bienvenido a la Academia mecuate astrophytum',
-        'academy:frontPage.description': 'this academy is made for all peoples from anywhrer in the universe.',
+        'academy:frontPage.description':
+            'this academy is made for all peoples from anywhrer in the universe.',
         'academy:workShopPage.groupName': 'Nombre de Grupo',
         'academy:workShopPage.groupType.solid': 'Grupo sólido',
         'academy:workShopPage.groupType.stable': 'Grupo fijo',
@@ -47,7 +49,8 @@ export const validTranslationKeys = {
     },
     ko: {
         'academy:frontPage.title': 'Bienvenido a la Academia mecuate astrophytum',
-        'academy:frontPage.description': 'this academy is made for all peoples from anywhrer in the universe.',
+        'academy:frontPage.description':
+            'this academy is made for all peoples from anywhrer in the universe.',
         'academy:workShopPage.groupName': 'Nombre de Grupo',
         'academy:workShopPage.groupType.solid': 'Grupo sólido',
         'academy:workShopPage.groupType.stable': 'Grupo fijo',

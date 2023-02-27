@@ -28,7 +28,11 @@ export const createFetch = (
 }
 
 export const createAPIClient = (baseURL: string) => {
-    async function client(endpoint: URL, method: Method, config: FetchConfig = { responseType: 'json' }) {
+    async function client(
+        endpoint: URL,
+        method: Method,
+        config: FetchConfig = { responseType: 'json' }
+    ) {
         const { responseType } = config
         let url = `${baseURL}${endpoint}`
         let data = config?.data
