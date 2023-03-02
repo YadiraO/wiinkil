@@ -3,20 +3,15 @@ import { colors } from 'styles/colors'
 
 export const ScreenManagerContainer = styled('div', {
     display: 'block',
-
-    padding: '$2',
+    padding: '$1',
     margin: 0,
-    overflowX: 'auto',
-    overflowY: 'hidden',
+    overflow: 'auto',
     width: '100%',
     height: '100%',
-
-    border: '1px solid red',
 })
 
 export const ScrollableContainer = styled('div', {
-    overflowX: 'auto',
-    overflowY: 'hidden',
+    overflow: 'auto',
 
     variants: {
         horizontal: {

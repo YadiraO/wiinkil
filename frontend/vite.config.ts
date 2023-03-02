@@ -17,20 +17,18 @@ srcRootContent.forEach((directory) => {
 export default defineConfig({
     mode: 'test',
     plugins: [react()],
-    test: {
-        globals: true,
-        environment: 'jsdom',
-        setupFiles: './src/test/setup.ts',
-        // you might want to disable it, if you don't have tests that rely on CSS
-        // since parsing CSS is slow
-        css: true,
-    },
     resolve: {
         alias: {
             ...absolutePathAliases,
         },
     },
     server: {
-        port: 80,
+        port: 3000,
+        // origin: '/src/assets/'
+    },
+    test: {
+        globals: true,
+        environment: 'jsdom',
+        setupFiles: './src/test/setup.ts',
     },
 })

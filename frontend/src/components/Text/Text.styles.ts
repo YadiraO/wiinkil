@@ -4,6 +4,7 @@ import { colors } from 'styles/colors'
 export const TextContainer = styled('span', {
     color: '$text',
     fontFamily: '$sans',
+    display: 'inline-block',
 
     variants: {
         font: {
@@ -94,6 +95,24 @@ export const TextContainer = styled('span', {
             },
             warn: {
                 color: colors.WARN[200],
+            },
+        },
+        paragraph: {
+            left: {
+                textAlign: 'left',
+                textJustify: 'none',
+            },
+            right: {
+                textAlign: 'right',
+                textJustify: 'none',
+            },
+            center: {
+                textAlign: 'center',
+                textJustify: 'none',
+            },
+            justified: {
+                textAlign: 'justify',
+                textJustify: 'inter-word',
             },
         },
     },

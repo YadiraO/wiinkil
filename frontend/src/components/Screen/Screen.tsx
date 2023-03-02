@@ -1,19 +1,13 @@
-import { ComponentProps } from 'react'
+import { ComponentProps, PropsWithChildren } from 'react'
 
-import { ScreenRoot, Locator } from './Screen.styles'
+import { ScreenRoot } from './Screen.styles'
 
 type ScreenOwnProps = ComponentProps<typeof ScreenRoot>
-export type ScreenProps = ScreenOwnProps & {
-    _name_?: string
-    isVisible?: boolean
-}
+export type ScreenProps = PropsWithChildren &
+    ScreenOwnProps & {
+        _name_: string
+    }
 
-export const Screen = ({ isVisible = false, _name_ = 'nil' }: ScreenProps) => {
-    return (
-        <ScreenRoot>
-            <Locator>
-                {_name_} {`${isVisible}_box`}
-            </Locator>
-        </ScreenRoot>
-    )
+export const Screen = ({ children, _name_ }: ScreenProps) => {
+    return <ScreenRoot id={_name_}>{children}</ScreenRoot>
 }

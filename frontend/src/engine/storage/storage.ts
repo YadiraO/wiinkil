@@ -25,8 +25,6 @@ const standard_cookie_duration = () => {
     return date_time
 }
 
-// const gmt_time_string = () => new Date().toUTCString()
-
 const create_cookie = (name: string, data: string | object, time = false) => {
     const _time = time ? set_cookie_time(time) : standard_cookie_duration()
     const string_data = typeof data === 'string' ? data : JSON.stringify(data)

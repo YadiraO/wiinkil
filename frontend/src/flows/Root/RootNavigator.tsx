@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Sidebar } from 'components/Sidebar'
-import { AcademyHome } from 'screens/Academy/AcademyHome'
 import { HomeRoutes, RoutesMap } from './RootNavigator.models'
 import { MecuateNavigator } from 'flows/Mecuate'
 
@@ -11,7 +10,6 @@ export const RootNavigator = () => {
             <Routes>
                 <Route path={RoutesMap[HomeRoutes.MECUATE]} element={<MecuateNavigator />} />
                 <Route path={RoutesMap[HomeRoutes.ACCOUNT]} element={'account'} />
-                <Route path={RoutesMap[HomeRoutes.ACADEMY]} element={<AcademyHome />} />
                 <Route path={RoutesMap[HomeRoutes.SERVICES]} element={'services'} />
                 <Route path={RoutesMap[HomeRoutes.DOCUWEB]} element={'docuweb'} />
                 <Route path={RoutesMap[HomeRoutes.PROJECTS]} element={'projects'} />

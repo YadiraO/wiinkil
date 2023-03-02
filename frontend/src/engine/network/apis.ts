@@ -64,4 +64,4 @@ export const createAPIClient = (baseURL: string) => {
     return client
 }
 
-export const MecauteStaticProvider = createAPIClient(DATA_API)
+export const StaticProvider = createAPIClient(DATA_API)

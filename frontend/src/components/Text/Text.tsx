@@ -9,11 +9,19 @@ export const Text = ({
     size = 'normal',
     weight = 'regular',
     font = 'sans',
+    paragraph = 'left',
     ...others
 }: TextProps) => {
     return (
         // <TextContainer color={'danger'} size={'max'}>
-        <TextContainer color={color} size={size} weight={weight} font={font} {...others}>
+        <TextContainer
+            color={color}
+            size={size}
+            weight={weight}
+            font={font}
+            {...others}
+            paragraph={paragraph}
+        >
             {children}
         </TextContainer>
     )
