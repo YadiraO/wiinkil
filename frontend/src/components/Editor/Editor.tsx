@@ -28,7 +28,9 @@ export const Editor: FC<EditorCustomProps> = ({
             const newData = window.editor.getValue()
             setDat(newData)
         } catch {
-            alert('FAIL getting the text form the editor, try keeping your data and reloading the page.')
+            alert(
+                'FAIL getting the text form the editor, try keeping your data and reloading the page.'
+            )
         }
     }, [])
 

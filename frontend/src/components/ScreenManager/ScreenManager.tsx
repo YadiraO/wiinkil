@@ -5,7 +5,6 @@ export const ScreenManager = () => {
     return (
         <ScreenManagerContainer>
             <ScrollableContainer>
-                
                 <EditorScreen />
             </ScrollableContainer>
         </ScreenManagerContainer>

@@ -5,7 +5,7 @@ import '../../userWorker'
 export const EditorScreen = () => {
     return (
         <Screen _name_={'EDITOR-SCREEN'}>
-            <Editor fileData={'hello'} fileType={'go'}/>
+            <Editor fileData={'hello'} fileType={'go'} />
         </Screen>
     )
 }
