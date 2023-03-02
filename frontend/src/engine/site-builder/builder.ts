@@ -1,4 +1,4 @@
-import { MecauteStaticProvider } from 'engine/network/apis.js'
+import { StaticProvider } from 'engine/network/apis.js'
 import { FetchConfig } from 'models/index'
 
 export type BuildParams = any & {
@@ -9,7 +9,7 @@ const build = (param: BuildParams) => {
     const endpoint = '/core/aHtml:latest'
     const params: FetchConfig = { responseType: 'json', params: param }
 
-    return Promise.resolve(MecauteStaticProvider.get(endpoint, params))
+    return Promise.resolve(StaticProvider.get(endpoint, params))
 }
 
 export { build }
