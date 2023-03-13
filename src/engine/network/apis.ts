@@ -28,6 +28,8 @@ export const createFetch = (
 }
 
 export const createAPIClient = (baseURL: string) => {
+    console.log('in side api client:',baseURL);
+    
     async function client(
         endpoint: URL,
         method: Method,
@@ -35,6 +37,8 @@ export const createAPIClient = (baseURL: string) => {
     ) {
         const { responseType } = config
         let url = `${baseURL}${endpoint}`
+        console.log('url:',url);
+        
         let data = config?.data
         const auth = {
             type: user.Token ? user.Token : 'Bearer',
@@ -64,4 +68,4 @@ export const createAPIClient = (baseURL: string) => {
     return client
 }
 
-export const StaticProvider = createAPIClient(DATA_API)
+export const StaticProvider = createAPIClient(/* DATA_API */'')

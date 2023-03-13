@@ -26,7 +26,7 @@ export const Editor: FC<EditorCustomProps> = ({
     const getDataInput = useCallback(() => {
         try {
             const newData = window.editor.getValue()
-            console.log(dat)
+            console.log(typeof dat, newData)
             setDat(newData)
         } catch {
             alert(

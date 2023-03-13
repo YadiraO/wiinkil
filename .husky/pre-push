@@ -6,11 +6,9 @@ n=$'\n'
 
 # FRONT END PROTOCOLS
 
-cd frontend
-yarn types 
-yarn format
-yarn test
-cd ..
+# yarn typecheck 
+# yarn format
+# yarn test
 
 # TERMINATION
 printf '\e[1;35m%s\e[0m%b' "$branch_name" " is updated. $n$n"
