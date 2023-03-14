@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: check types
       - run: npm typecheck
-  run-tests:
+  checktests:
     runs-on: ubuntu-20.04
     needs: prepare
     steps:
