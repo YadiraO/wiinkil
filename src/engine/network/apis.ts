@@ -29,6 +29,7 @@ export const createFetch = (
 
 export const createAPIClient = (baseURL: string) => {
     console.log('in side api client:',baseURL);
+    console.log('DATA_API:',DATA_API);
     
     async function client(
         endpoint: URL,
@@ -68,4 +69,4 @@ export const createAPIClient = (baseURL: string) => {
     return client
 }
 
-export const StaticProvider = createAPIClient(/* DATA_API */'')
+export const StaticProvider = createAPIClient(DATA_API)
