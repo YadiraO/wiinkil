@@ -21,9 +21,21 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
+  checktests:
+    runs-on: ubuntu-20.04
+    needs: prepare
+    steps:
+      - name: running the testsuites
+        run: npm run test
   checktypes:
     runs-on: ubuntu-20.04
     needs: prepare
     steps:
       - name: check types
         run: npm run typecheck
+  build:
+    runs-on: ubuntu-20.04
+    needs: prepare
+    steps:
+      - name: check if can be merged
+        run: npm run build --if-present
