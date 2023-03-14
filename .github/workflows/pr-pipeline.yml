@@ -23,7 +23,7 @@ jobs:
     name: checking branch before merge
     runs-on: ubuntu-20.04
     container: node:lts-alpine
-    timeout-minutes: 10
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v2
       - name: install dependencies
@@ -32,3 +32,5 @@ jobs:
         run: yarn typecheck
       - name: run unit tests
         run: yarn test
+      - name: run build
+        run: yarn build
