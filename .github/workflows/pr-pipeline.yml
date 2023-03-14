@@ -1,4 +1,3 @@
----
 name: pr-pipeline
 on:
   push:
@@ -10,32 +9,26 @@ on:
 jobs:
   prepare:
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node-version:
-          - 16.x
+    timeout-minutes: 10
+  
+    steps:
+      - name: fail on draft
+        if: github.event.pull_request.draft == true
+        run: echo "avoid is draft" && exit 1
+      - name: success
+        run: echo "continue with pipeline"
+
+  checkbranch:
+    needs: prepare
+    name: checking branch before merge
+    runs-on: ubuntu-20.04
+    container: node:lts-alpine
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-  checktests:
-    runs-on: ubuntu-20.04
-    needs: prepare
-    steps:
-      - name: running the testsuites
-        run: npm run test
-  checktypes:
-    runs-on: ubuntu-20.04
-    needs: prepare
-    steps:
+      - name: install dependencies
+        run: yarn install --frozen-lockfile
       - name: check types
-        run: npm run typecheck
-  build:
-    runs-on: ubuntu-20.04
-    needs: prepare
-    steps:
-      - name: check if can be merged
-        run: npm run build --if-present
+        run: yarn typecheck
+      - name: run unit tests
+        run: yarn test
