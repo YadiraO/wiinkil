@@ -1,44 +1,38 @@
+---
 name: pr-pipeline
 on:
   push:
-    branches: [ "dev" ]
+    branches:
+      - dev
   pull_request:
-    branches: [ "dev" ]
-
+    branches:
+      - dev
 jobs:
   prepare:
     runs-on: ubuntu-20.04
-    
     strategy:
       matrix:
-        node-version: [16.x]
-
+        node-version:
+          - 16.x
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
   checktypes:
     runs-on: ubuntu-20.04
-
     steps:
-    - name: check types
-    - run: npm typecheck
-
-
+      - name: check types
+      - run: npm typecheck
   run-tests:
     runs-on: ubuntu-20.04
-
     steps:
-    - name: running the testsuites
-    - run: npm test
-    
+      - name: running the testsuites
+      - run: npm test
   build:
     runs-on: ubuntu-20.04
-
     steps:
-    - name: check if can be merged
-    - run: npm run build --if-present
+      - name: check if can be merged
+      - run: npm run build --if-present
