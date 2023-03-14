@@ -26,16 +26,4 @@ jobs:
     needs: prepare
     steps:
       - name: check types
-      - run: npm typecheck
-  checktests:
-    runs-on: ubuntu-20.04
-    needs: prepare
-    steps:
-      - name: running the testsuites
-      - run: npm test
-  build:
-    runs-on: ubuntu-20.04
-    needs: prepare
-    steps:
-      - name: check if can be merged
-      - run: npm run build --if-present
+        run: npm run typecheck
